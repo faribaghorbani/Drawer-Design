@@ -1,27 +1,33 @@
 .sidebar {
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0rem;
+    }
     position: fixed;
-    background-color: cadetblue;
-    // box-sizing: content-box;
-    // overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    // overflow: auto;
     // overflow-y: auto;
-    padding: 10px;
-    padding-right: 25px;
+    scrollbar-width: 3px;
+    direction: ltr;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 100%;
-    transition: width ease-in-out 0.5s;
+    transition: width ease-in-out 0.5s, background-color 0.3s linear;
+
     &.open {
         width: 250px;
     }
     &.close {
-        width: 110px;
-        padding-right: 15px;
+        width: 100px;
     }
 
     .content {
-        overflow: hidden;
+        overflow-x: hidden;
         min-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
         a {
             text-decoration: none;
             color: inherit;
@@ -32,7 +38,6 @@
             width: 50px;
             height: 50px;
             margin-top: 20px; margin-bottom: 20px;
-            margin-left: 25px;
             transition: margin 0.5s ease-in-out;
             img {
                 width: 100%;
@@ -52,15 +57,14 @@
                 margin-bottom: 3px;
                 display: flex;
                 align-items: center;
-    
+                transition: margin 0.5s ease-in-out;
+                
                 &.icon {
                     padding: 7px;
                     font-size: 1.3rem;
-                    margin-left: 25px;
                     border-radius: 7px;
                 }
                 &.title {
-                    margin-left: 20px;
                     transition: margin 0.3s ease-in;
                 }
             }
@@ -69,25 +73,34 @@
         &.close {
             display: flex;
             flex-direction: column;
-            .logo, .section-title {
-                margin-left: 15px;
+            .logo {
+                margin-left: 10px;
+            }
+            .section-title {
+                margin-bottom: 5px;
+                font-size: 0.7rem;
+                transition: margin 0.5s ease-in-out;
             }
             .list-item {
-                .title {
+                margin-left: 8px;
+                &.title {
                     margin-left: 40px;
                 }
             }
         }
 
         &.open {
-            .section-title, .logo {
-                margin-left: 25px;
+            .list-item {
+                &.title {
+                    margin-left: 20px;
+                }
             }
         }
     }
 }
 
 .arrow-indicator {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
