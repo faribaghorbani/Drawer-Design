@@ -1,31 +1,14 @@
 import React, { useState } from 'react'
 import '../Assets/Style/sidebar.scss'
-
-import { GrDocumentPerformance } from 'react-icons/gr'
-import { MdOutlineSpaceDashboard, MdEventNote } from 'react-icons/md'
-import { RiHotspotLine } from 'react-icons/ri'
-import { FiThumbsUp } from 'react-icons/fi'
-import { BiCheckShield } from 'react-icons/bi'
-import { AiOutlineInbox } from 'react-icons/ai'
-import { VscPaintcan } from 'react-icons/vsc'
-
+import sidebarContent from '../Content'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { HiOutlineLightBulb } from 'react-icons/hi'
+import darkLogo from '../Assets/images/logo-dark.png'
+import lightLogo from '../Assets/images/logo-light.png'
+import Avatar from './Avatar'
 
-const analytics = [
-    {logo: <MdOutlineSpaceDashboard className='icon' />, title: "Dashboard"},
-    {logo: <GrDocumentPerformance className='icon'/>, title: "Performance"}
-]
-
-const contents = [
-    {logo: <MdEventNote className='icon' />, title: "Guides"},
-    {logo: <RiHotspotLine className='icon'/>, title: "Hotspots"},
-    {logo: <BiCheckShield className='icon'/>, title: "Checklists"},
-    {logo: <FiThumbsUp className='icon'/>, title: "NPS"}
-]
-
-const customizations = [
-    {logo: <AiOutlineInbox className='icon' />, title: "Segments"},
-    {logo: <VscPaintcan className='icon'/>, title: "Themes"}
+const theme = [
+    {logo: <HiOutlineLightBulb className='icon' />, title: "Theme"},
 ]
 
 const Sidebar = () => {
@@ -36,7 +19,51 @@ const Sidebar = () => {
     }
 
     return (
-        <div className='sidebar' style={{ width: open? '300px':'50px' }}>
+        <div className={`sidebar ${open? 'open':'close'}`}>
+            <div className={`content ${open? 'open':'close'}`}>
+                <div className='top'>
+                    <div className='logo'>
+                        <img  src={darkLogo} />
+                    </div>
+
+                    {sidebarContent.map((section) => {
+                        return (
+                            <div className='section'>
+                                <h5 className='section-title'>{open? section.sectionName.open: section.sectionName.close}</h5>
+                                {section.listItems.map((item) => {
+                                    return (
+                                    <a href='#' className={`list-item ${open? 'open':'close'}`}>
+                                        <div className='list-item icon'>
+                                            {item.logo}
+                                        </div>
+                                        <div className='list-item title'>
+                                            {item.title}
+                                        </div>
+                                    </a>
+                                    )
+                                })}
+                            </div>
+                        )
+                    })}
+                </div>
+                <div className='bottom'>
+                    {theme.map((item) => {
+                        return (
+                        <a href='#' className={`list-item ${open? 'open':'close'}`}>
+                            <div className='list-item icon'>
+                                {item.logo}
+                            </div>
+                            <div className='list-item title'>
+                                {item.title}
+                            </div>
+                        </a>
+                        )
+                    })}
+                    <Avatar open={open} />
+                </div>
+            </div>
+
+
             <div className='arrow-indicator'>
                 {open? <IoIosArrowBack 
                 onClick={handleOpenStatus}
