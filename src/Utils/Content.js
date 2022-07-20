@@ -5,13 +5,14 @@ import { FiThumbsUp } from 'react-icons/fi'
 import { BiCheckShield } from 'react-icons/bi'
 import { AiOutlineInbox } from 'react-icons/ai'
 import { VscPaintcan } from 'react-icons/vsc'
+import { HiTrendingUp } from 'react-icons/hi'
 
 const sidebarContent = [
     {
         sectionName: {open: 'ANALYTICS', close: 'ANALYTICS'},
         listItems: [
             {logo: <MdOutlineSpaceDashboard className='icon' />, title: "Dashboard"},
-            {logo: <GrDocumentPerformance className='icon'/>, title: "Performance"}
+            {logo: <HiTrendingUp className='icon'/>, title: "Performance"}
         ]
     },
     {
