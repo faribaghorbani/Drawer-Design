@@ -46,7 +46,8 @@ const Sidebar = () => {
                         )
                     })}
                 </div>
-                <div className='bottom'>
+                <div className='bottom section'>
+                    
                     {theme.map((item) => {
                         return (
                         <a href='#' className={`list-item ${open? 'open':'close'}`}>

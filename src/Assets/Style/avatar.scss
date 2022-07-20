@@ -1,0 +1,34 @@
+.avatar-container {
+    margin-top: 10px; 
+    display: flex;
+    align-items: center;
+    transition: margin 0.5s ease-in-out;
+
+    &.background, .background {
+        padding: 10px;
+        background-color: aliceblue;
+        border-radius: 15px;
+    }
+    
+    .image {
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    &.open {
+        margin-left: 25px;
+        .description {
+            font-size: 0.8rem;
+            margin-left: 20px;
+        }
+    }
+    &.close {
+        margin-left: 15px;
+        .description {
+            opacity: 0;
+            margin-left: 40px;
+        }
+    }
+}
