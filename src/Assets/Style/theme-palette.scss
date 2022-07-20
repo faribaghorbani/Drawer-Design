@@ -1,0 +1,21 @@
+$light-palette: (
+    "background-color": rgb(246, 246, 246),
+    "font-color-main": rgb(61, 61, 61),
+    "font-color-secondary": rgb(95, 95, 95),
+    "font-color-hover": rgb(2, 67, 208),
+    "onhover-background": rgba(217, 228, 250, 0.674),
+    "avatar-background": rgb(240, 240, 240),
+    "arrow-background": rgb(255, 255, 255)
+);
+
+
+
+$dark-palette: (
+    "background-color": rgb(0, 0, 0),
+    "font-color-main": rgb(226, 226, 226),
+    "font-color-secondary": rgb(178, 178, 178),
+    "font-color-hover": rgb(255, 255, 255),
+    "onhover-background": rgb(76, 76, 76),
+    "avatar-background": rgb(76, 76, 76),
+    "arrow-background": rgb(42, 42, 42),
+);
