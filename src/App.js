@@ -1,11 +1,20 @@
+import { useEffect, useState } from "react";
 import Sidebar from "./Components/Sidebar";
+import ThemeContext from "./Context/ThemeContext";
 
 function App() {
-  return (
-    <div className="App">
-      <Sidebar />
-    </div>
-  );
+	const [themeStatus, setThemeStatus] = useState('light')
+
+	return (
+		<ThemeContext.Provider value={{
+		themeStatus,
+		setThemeStatus
+		}}>
+			<div className="App">
+				<Sidebar />
+			</div>
+		</ThemeContext.Provider>
+	);
 }
 
 export default App;
