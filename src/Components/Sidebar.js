@@ -10,7 +10,7 @@ import Avatar from './Avatar'
 import ThemeContext from '../Context/ThemeContext'
 
 const theme = [
-    {logo: <HiOutlineLightBulb className='icon' />, title: "Theme"},
+    {logo: <HiOutlineLightBulb className='icon' />, title: {dark: "Light Mode", light: "Dark Mode"}},
 ]
 
 const Sidebar = () => {
@@ -69,7 +69,7 @@ const Sidebar = () => {
                                 {item.logo}
                             </div>
                             <div className='list-item title'>
-                                {item.title}
+                                {themeStatus === 'light'? item.title.light : item.title.dark }
                             </div>
                         </a>
                         )
