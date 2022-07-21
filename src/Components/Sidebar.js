@@ -36,12 +36,12 @@ const Sidebar = () => {
 
                     {sidebarContent.map((section) => {
                         return (
-                            <div key={uuidv4()} className='section'>
+                            <div className='section'>
                                 <h5 className='section-title'>{open? section.sectionName.open: section.sectionName.close}</h5>
                                 {section.listItems.map((item) => {
                                     return (
                                     <a 
-                                    key={uuidv4()}
+                                    // key={uuidv4()}
                                     href='#' 
                                     className={`list-item ${open? 'open':'close'}`}
                                     >
@@ -63,7 +63,7 @@ const Sidebar = () => {
                     {theme.map((item) => {
                         return (
                         <a 
-                        key={uuidv4()}
+                        // key={uuidv4()}
                         href='#' 
                         className={`list-item ${open? 'open':'close'}`}
                         onClick={handleThemeChanging}
