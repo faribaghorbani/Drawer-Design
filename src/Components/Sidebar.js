@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import '../Assets/Style/sidebar.scss'
 import '../Assets/Style/sidebar-theme.scss'
 import sidebarContent from '../Utils/Content'
@@ -35,11 +36,12 @@ const Sidebar = () => {
 
                     {sidebarContent.map((section) => {
                         return (
-                            <div className='section'>
+                            <div key={uuidv4()} className='section'>
                                 <h5 className='section-title'>{open? section.sectionName.open: section.sectionName.close}</h5>
                                 {section.listItems.map((item) => {
                                     return (
                                     <a 
+                                    key={uuidv4()}
                                     href='#' 
                                     className={`list-item ${open? 'open':'close'}`}
                                     >
@@ -61,6 +63,7 @@ const Sidebar = () => {
                     {theme.map((item) => {
                         return (
                         <a 
+                        key={uuidv4()}
                         href='#' 
                         className={`list-item ${open? 'open':'close'}`}
                         onClick={handleThemeChanging}
