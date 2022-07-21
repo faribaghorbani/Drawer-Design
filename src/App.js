@@ -10,7 +10,7 @@ function App() {
 		themeStatus,
 		setThemeStatus
 		}}>
-			<div className="App">
+			<div className={`App ${themeStatus === 'light'? 'light': 'dark'} `}>
 				<Sidebar />
 			</div>
 		</ThemeContext.Provider>
