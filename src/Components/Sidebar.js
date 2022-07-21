@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react'
 import '../Assets/Style/sidebar.scss'
 import '../Assets/Style/sidebar-theme.scss'
 import sidebarContent from '../Utils/Content'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { HiOutlineLightBulb } from 'react-icons/hi'
 import darkLogo from '../Assets/images/logo-dark.png'
 import lightLogo from '../Assets/images/logo-light.png'
 import Avatar from './Avatar'
 import ThemeContext from '../Context/ThemeContext'
+import ArrowIndicator from './ArrowIndicator'
 
 const theme = [
     {logo: <HiOutlineLightBulb className='icon' />, title: {dark: "Light Mode", light: "Dark Mode"}},
@@ -77,19 +77,7 @@ const Sidebar = () => {
                     <Avatar open={open} />
                 </div>
             </div>
-
-
-            <div className='arrow-indicator'>
-                {open? <IoIosArrowBack 
-                onClick={handleOpenStatus}
-                className='icon'
-                /> 
-                : <IoIosArrowForward 
-                onClick={handleOpenStatus}
-                className='icon'
-                />
-                }
-            </div>
+            <ArrowIndicator open={open} handleOpenStatus={handleOpenStatus} />
         </div>
     )
 }
